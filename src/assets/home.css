@@ -1,0 +1,235 @@
+/*@import url('https://fonts.googleapis.com/css?family=Sriracha&display=swap');*/
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+.card_curve {
+    /*border-radius: 90px 0 90px 0;*/
+    min-height: 300px;
+    overflow: hidden;
+    margin-top: 15px !important;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+body, div, span, h1, h2, h3, h4, h5, h6 {
+    /*font-family: 'Sriracha', cursive !important;*/
+    /*font-family: 'Josefin Sans', sans-serif !important;*/
+}
+
+.main_color {
+    color: #2dce89bf;
+}
+
+
+.snip1527 {
+    color: #000;
+    font-size: 16px;
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    min-height: 370px;
+}
+
+.snip1527 * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}
+
+.snip1527 img {
+    max-width: 100%;
+    vertical-align: top;
+    position: relative;
+}
+
+.snip1527 figcaption {
+    padding: 25px 20px 25px;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    left: 0;
+    /*bottom: -25px;*/
+    bottom: 0px;
+}
+
+
+.snip1527 figcaption:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    content: '';
+    /*background: linear-gradient(90deg, #700877 0%, #ff2759 80%, #ff2759 100%);*/
+    /*background: linear-gradient(90deg, #9b233c 0%, #222 80%, #000000 100%);*/
+    opacity: 0.8;
+    z-index: -1;
+}
+
+.snip1527 .date {
+    background-color: #fff;
+    border-radius: 50%;
+    color: #000;
+    font-size: 18px;
+    font-weight: 700;
+    min-height: 48px;
+    min-width: 48px;
+    padding: 10px 0;
+    position: absolute;
+    right: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    top: -25px;
+}
+
+.snip1527 .date span {
+    display: block;
+    line-height: 14px;
+}
+
+.snip1527 .date .month {
+    font-size: 11px;
+}
+
+.snip1527 h3,
+.snip1527 p {
+    margin: 0;
+    padding: 0;
+}
+
+.snip1527 h3 {
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    margin-bottom: 5px;
+    height: 40px;
+}
+
+.snip1527 p {
+    font-size: 0.8em;
+    line-height: 1.6em;
+    margin-bottom: 0px;
+}
+
+.snip1527 a {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+.snip1527:hover img,
+.snip1527.hover img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.snip1527:hover figcaption {
+    bottom: 0px;
+}
+
+.snip1527:hover i {
+    font-size: 35px;
+}
+
+.section-shaped .shape-style-1 :nth-child(1) {
+    left: -4%;
+    bottom: auto;
+    background: #2dce89bf;
+}
+
+.section-shaped .shape-style-1 :nth-child(2) {
+    right: 4%;
+    top: 10%;
+    background: #2dce89bf;
+}
+
+.section-shaped .shape-style-1 :nth-child(3) {
+    top: 280px;
+    right: 5.66666%;
+    background: #2dce89bf;
+}
+
+.section-shaped .shape-style-1 :nth-child(4) {
+    top: 320px;
+    right: 7%;
+    background: #2dce89bf;
+}
+
+.section-shaped .shape-style-1 :nth-child(5) {
+    top: -92px;
+    left: 26%;
+    right: auto;
+    background: #2dce89bf;
+}
+
+.section-shaped .shape-style-1 :nth-child(6) {
+    width: 200px;
+    height: 200px;
+    top: 44%;
+    left: 10%;
+    right: auto;
+    background: #2dce89bf;
+}
+
+.section-shaped .shape-style-1 :nth-child(7) {
+    bottom: 50%;
+    right: 36%;
+    background: #2dce89bf;
+    opacity: 0.7;
+}
+
+.section-shaped .shape-style-1 :nth-child(8) {
+    bottom: 70px;
+    right: 2%;
+    background: #2dce89bf;
+    opacity: 0.7;
+}
+
+.section-shaped .shape-style-1 :nth-child(9) {
+    bottom: 1%;
+    right: 2%;
+    background: #2dce89bf;
+    opacity: 0.7;
+}
+
+.section-shaped .shape-style-1 :nth-child(10) {
+    bottom: 1%;
+    left: 1%;
+    right: auto;
+    background: #2dce89bf;
+    opacity: 0.7;
+}
+
+.section-shaped .shape-style-1 :nth-child(11) {
+    top: 100px;
+    right: 3%;
+    left: auto;
+    background: #2dce89bf;
+    width: 250px;
+    height: 250px;
+    opacity: 0.7;
+}
+
+.navbar-transparent .navbar-nav .nav-link:hover {
+    color: #444;
+}
+
+.btn_new {
+    background-color: #2dce89bf;
+    padding: 0px;
+}
+
+.text-ellipsis {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

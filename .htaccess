@@ -1,16 +1,16 @@
-#<IfModule mod_rewrite.c>
-#  RewriteEngine On
-#  RewriteBase /
-#  RewriteRule ^index\.html$ - [L]
-#  RewriteCond %{REQUEST_FILENAME} !-f
-#  RewriteCond %{REQUEST_FILENAME} !-d
-#  RewriteRule . /index.html [L]
-#</IfModule>
+<IfModule mod_rewrite.c>
+ RewriteEngine On
+ RewriteBase /
+ RewriteRule ^index\.html$ - [L]
+ RewriteCond %{REQUEST_FILENAME} !-f
+ RewriteCond %{REQUEST_FILENAME} !-d
+ RewriteRule . /index.html [L]
+</IfModule>
 
 # Remove www from any URLs that have them:
 # RewriteEngine on
 # RewriteCond %{HTTP_HOST} ^www\.
-# RewriteRule ^(.*)$ https://zashzash.com/$1 [R=301,L]
+# RewriteRule ^(.*)$ https://rnpdelivery.com/$1 [R=301,L]
 
 # handle https
 RewriteEngine On

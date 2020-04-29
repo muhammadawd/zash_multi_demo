@@ -222,7 +222,7 @@
                             logo: logo
                         };
                         vm.settings = settings;
-                        localStorage.setItem('expiration', JSON.stringify('الايام المتبقية لديك 2 يوم'))
+                        localStorage.setItem('expiration', JSON.stringify(data.expiration_msg ? data.expiration_msg : ''))
                         localStorage.setItem('settings', JSON.stringify(settings))
                         localStorage.setItem('pointModule', JSON.stringify(pointModule))
                         localStorage.setItem('to_money_percent', JSON.stringify(to_money_percent))

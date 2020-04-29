@@ -3,13 +3,20 @@
 
         <header class="header-global">
             <base-nav class="navbar-main navbar-fixed-top  p-1 bg-white"
-                      :class="isMobile() ? 'direction-inverse':'direction'" type="" effect="light" expand>
+                      :class="[isMobile() ? 'direction-inverse':'direction',getExpiration() ? 'pt-4' : '']"
+                      type="" effect="light" expand>
                 <router-link slot="brand" class="navbar-brand mr-lg-5" to="/">
                     <!--<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ43hxtf1M24Ye1TDjcA6oQ_R8fzPb4jOCwb-HnvezqGx70pbTG&usqp=CAU"-->
                     <!--width="170" height="40" alt="logo">-->
                     <img :src="$helper.getLogo()" width="170" height="40"/>
                 </router-link>
 
+                <div slot="content-alert">
+                    <div v-if="getExpiration()"
+                         style="height: 25px;background: #F44336;position: absolute;top: 0;width: 100%;left: 0;color: #fff;text-align: center;">
+                        {{getExpiration()}}
+                    </div>
+                </div>
                 <div style="position: absolute;right: 60px;top: 0;" slot="content-cart">
                     <div class="d-md-none" style="margin-top: 20px;">
                         <a href="#" @click.prevent="modals.modal2 = true"
@@ -221,7 +228,10 @@
                 }, 100)
             },
             getLogo() {
-                this.$helper.getLogo()
+                return this.$helper.getLogo()
+            },
+            getExpiration() {
+                return this.$helper.getExpiration();
             },
             isMobile() {
                 if (screen.width <= 760) {
@@ -250,7 +260,7 @@
             },
             getApiSuggest() {
                 let vm = this;
-                axios.get(apiServiesRoutes.BASE_URL + apiServiesRoutes.PRODUCT_AUTO_COMPLETE, {
+                this.$apiServiesRoutes.API().get(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.PRODUCT_AUTO_COMPLETE, {
                     params: {
                         category: true,
                         lang: vm.lang,
@@ -392,13 +402,14 @@
         border-left: 0 !important;
         border-top-right-radius: 20px !important;
         border-bottom-right-radius: 20px !important;
-        padding-top: 6px!important;
+        padding-top: 6px !important;
     }
 
-    .search-input .input-group-addon i{
+    .search-input .input-group-addon i {
         position: relative;
         top: 3px;
     }
+
     .search-input .input-group-addon {
         border: 1px solid #333 !important;
         border-right: 0 !important;

@@ -155,7 +155,7 @@
                 let request_data = {
                     email: vm.subscribe
                 }
-                axios.post(apiServiesRoutes.BASE_URL + apiServiesRoutes.CREATE_SUBSCRIBE, request_data)
+                this.$apiServiesRoutes.API().post(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.CREATE_SUBSCRIBE, request_data)
                     .then((resp) => {
                         let status = resp.data.status;
                         let data = resp.data.data;
@@ -184,7 +184,7 @@
                     vm.settings = settings;
                     // return
                 }
-                axios.get(apiServiesRoutes.BASE_URL + apiServiesRoutes.HOME_ADS, {
+                this.$apiServiesRoutes.API().get(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.HOME_ADS, {
                     params: {
                         lang: vm.lang
                     }
@@ -222,6 +222,7 @@
                             logo: logo
                         };
                         vm.settings = settings;
+                        localStorage.setItem('expiration', JSON.stringify('الايام المتبقية لديك 2 يوم'))
                         localStorage.setItem('settings', JSON.stringify(settings))
                         localStorage.setItem('pointModule', JSON.stringify(pointModule))
                         localStorage.setItem('to_money_percent', JSON.stringify(to_money_percent))

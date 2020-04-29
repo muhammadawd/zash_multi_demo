@@ -36,29 +36,29 @@
                                                     <div class="row">
 
                                                         <div class="col-12 text-left">
-                                                            <!--<base-input alternative-->
-                                                            <!--class="mb-3"-->
-                                                            <!--type="email"-->
-                                                            <!--v-model="email"-->
-                                                            <!--:placeholder="this.$ml.get('phone')"-->
-                                                            <!--addon-left-icon="ni ni-mobile">-->
-                                                            <!--</base-input>-->
-                                                            <div class="form-group mb-3 input-group input-group-alternative">
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text">
-                                                                        <i class="ni ni-mobile-button"></i>
-                                                                    </span>
-                                                                </div>
-                                                                <input aria-describedby="addon-right addon-left"
-                                                                       v-model="email"
-                                                                       type="text" :placeholder="this.$ml.get('phone')"
-                                                                       class="form-control">
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text">
-                                                                        965
-                                                                    </span>
-                                                                </div>
-                                                            </div>
+                                                            <base-input alternative
+                                                            class="mb-3"
+                                                            type="email"
+                                                            v-model="email"
+                                                            :placeholder="this.$ml.get('email')"
+                                                            addon-left-icon="ni ni-email-83">
+                                                            </base-input>
+                                                            <!--<div class="form-group mb-3 input-group input-group-alternative">-->
+                                                                <!--<div class="input-group-prepend">-->
+                                                                    <!--<span class="input-group-text">-->
+                                                                        <!--<i class="ni ni-mobile-button"></i>-->
+                                                                    <!--</span>-->
+                                                                <!--</div>-->
+                                                                <!--<input aria-describedby="addon-right addon-left"-->
+                                                                       <!--v-model="email"-->
+                                                                       <!--type="text" :placeholder="this.$ml.get('phone')"-->
+                                                                       <!--class="form-control">-->
+                                                                <!--<div class="input-group-prepend">-->
+                                                                    <!--<span class="input-group-text">-->
+                                                                        <!--965-->
+                                                                    <!--</span>-->
+                                                                <!--</div>-->
+                                                            <!--</div>-->
                                                             <small id="email"
                                                                    class="position-relative font-weight-bold text-danger"
                                                                    style="top: -10px;"></small>
@@ -115,7 +115,7 @@
                 };
                 // vm.$refs.loader.show_loader = true;
                 vm.$root.$children[0].$refs.loader.show_loader = true;
-                axios.post(apiServiesRoutes.BASE_URL + apiServiesRoutes.RESET_PASSWORD, request_data)
+                this.$apiServiesRoutes.API().post(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.RESET_PASSWORD, request_data)
                     .then((resp) => {
                         let status = resp.data.status;
                         let data = resp.data.data;

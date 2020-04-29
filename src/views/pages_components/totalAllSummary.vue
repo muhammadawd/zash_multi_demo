@@ -140,7 +140,7 @@
                 let token = auth_user.token;
                 vm.$root.$children[0].$refs.loader.show_loader = true;
 
-                axios.post(apiServiesRoutes.BASE_URL + apiServiesRoutes.CREATE_SALE, request_date, {
+                this.$apiServiesRoutes.API().post(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.CREATE_SALE, request_date, {
                     headers: {Authorization: "Bearer " + token}
                 }).then((resp) => {
                     let status = resp.data.status;

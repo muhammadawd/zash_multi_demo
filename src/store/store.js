@@ -195,7 +195,7 @@ export const store = new Vuex.Store({
             if (auth) {
                 let token = auth.token;
 
-                axios.post(apiServiesRoutes.BASE_URL + apiServiesRoutes.DELETE_CART, {
+                this.$apiServiesRoutes.API().post(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.DELETE_CART, {
                     product_option_value_ids: [pov_id],
                 }, {
                     headers: {Authorization: "Bearer " + token}
@@ -229,7 +229,7 @@ export const store = new Vuex.Store({
             if (auth) {
                 let token = auth.token;
 
-                axios.post(apiServiesRoutes.BASE_URL + apiServiesRoutes.SYNC_CART, {
+                this.$apiServiesRoutes.API().post(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.SYNC_CART, {
                     branch_ids: branch_ids,
                     store_ids: store_ids,
                     prices: prices,
@@ -279,7 +279,7 @@ export const store = new Vuex.Store({
             }
 
             // CHECK_FOR_PROMOTION
-            axios.post(apiServiesRoutes.BASE_URL + apiServiesRoutes.CHECK_FOR_PROMOTION, {
+            this.$apiServiesRoutes.API().post(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.CHECK_FOR_PROMOTION, {
                 branches_ids: branch_ids,
                 store_ids: store_ids,
                 prices: prices,
@@ -307,7 +307,7 @@ export const store = new Vuex.Store({
             if (auth) {
                 let token = auth.token;
                 // get cart data
-                axios.get(apiServiesRoutes.BASE_URL + apiServiesRoutes.GET_ALL_CART, {
+                this.$apiServiesRoutes.API().get(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.GET_ALL_CART, {
                     headers: {Authorization: "Bearer " + token}
                 }).then((response) => {
                     let status = response.data.status;

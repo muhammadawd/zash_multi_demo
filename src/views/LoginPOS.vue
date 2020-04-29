@@ -111,7 +111,7 @@
                 let vm = this;
                 vm.$root.$children[0].$refs.loader.show_loader = true;
                 let request_data = vm.prepareRequestData();
-                axios.post(apiServiesRoutes.BASE_URL + apiServiesRoutes.LOGIN_ADMIN, request_data)
+                this.$apiServiesRoutes.API().post(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.LOGIN_ADMIN, request_data)
                     .then((resp) => {
                         vm.$root.$children[0].$refs.loader.show_loader = false;
                         let status = resp.data.status;
@@ -138,7 +138,7 @@
             },
             handleGoogleLogin(request_data) {
                 let vm = this;
-                axios.post(apiServiesRoutes.BASE_URL + apiServiesRoutes.REGISTER_GOOGLE, request_data)
+                this.$apiServiesRoutes.API().post(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.REGISTER_GOOGLE, request_data)
                     .then((resp) => {
                         console.log(resp.data)
                         let status = resp.data.status;
@@ -211,7 +211,7 @@
                 let request_data = {
                     email: this.email
                 }
-                axios.post(apiServiesRoutes.BASE_URL + apiServiesRoutes.RESEND_VERFICATION_MAIL, request_data)
+                this.$apiServiesRoutes.API().post(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.RESEND_VERFICATION_MAIL, request_data)
                     .then((resp) => {
                         let status = resp.data.status;
                         let data = resp.data.data;

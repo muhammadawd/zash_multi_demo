@@ -139,7 +139,7 @@
         methods: {
             getStoreInfo(id) {
                 let vm = this;
-                axios.get(apiServiesRoutes.BASE_URL + apiServiesRoutes.FIND_STORE_INFO + `/${id}`, {
+                this.$apiServiesRoutes.API().get(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.FIND_STORE_INFO + `/${id}`, {
                     params: {
                         lang: vm.lang
                     }

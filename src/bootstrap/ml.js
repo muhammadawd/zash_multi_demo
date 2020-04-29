@@ -211,7 +211,7 @@ export default new MLCreate({
             payment_fees: 'Payment Fees',
             price_range: 'Price Range',
             to_money_percent: 'Price Of Transfer Points To Cash Per Point',
-            email_optional: 'Email (optional)',
+            email_optional: 'Email',
             vouchers: 'vouchers',
             is_used: 'is used',
             used: 'used',
@@ -223,7 +223,7 @@ export default new MLCreate({
         }),
 
         new MLanguage('ar').create({
-            email_optional: 'البريد الالكتروني (اختياري)',
+            email_optional: 'البريد الالكتروني ',
             phone_verification: 'تفعيل رقم الهاتف',
             more_details: 'تفاصيل اكثر',
             360: '360',
@@ -344,7 +344,7 @@ export default new MLCreate({
             reset_sent: ' لقد تم ارسال الرابط الى رقم هاتفك لتغيير كلمة المرور',
             create_account: 'انشاء حساب جديد',
             have_account: 'لدي حساب بالفعل!',
-            type_mail_reset: 'اكتب   رقم الهاتف لتغيير كلمة المرور',
+            type_mail_reset: 'اكتب بريدك الالكتروني لتغيير كلمة المرور',
             show_details: 'عرض التفاصيل',
             contact_us: 'تواصل معنا',
             message: 'نص الرسالة',

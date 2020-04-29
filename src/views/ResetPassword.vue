@@ -108,7 +108,7 @@
                     lang: vm.lang,
                     password_confirmation: vm.password_confirmation,
                 };
-                axios.post(apiServiesRoutes.BASE_URL + apiServiesRoutes.UPDATE_PASSWORD, request_data)
+                this.$apiServiesRoutes.API().post(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.UPDATE_PASSWORD, request_data)
                     .then((resp) => {
                         vm.$root.$children[0].$refs.loader.show_loader = false;
                         let status = resp.data.status;

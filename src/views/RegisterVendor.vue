@@ -247,7 +247,7 @@
                 };
                 //CREATE_VENDOR
 
-                axios.post(apiServiesRoutes.BASE_URL + apiServiesRoutes.CREATE_VENDOR, request_data).then((resp) => {
+                this.$apiServiesRoutes.API().post(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.CREATE_VENDOR, request_data).then((resp) => {
                     let status = resp.data.status;
                     let data = resp.data.data;
                     vm.$root.$children[0].$refs.loader.show_loader = false;
@@ -300,7 +300,7 @@
                 };
                 //CREATE_CONTACT_US
 
-                axios.post(apiServiesRoutes.BASE_URL + apiServiesRoutes.CREATE_CONTACT_US, request_data).then((resp) => {
+                this.$apiServiesRoutes.API().post(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.CREATE_CONTACT_US, request_data).then((resp) => {
                     let status = resp.data.status;
                     let data = resp.data.data;
                     vm.$root.$children[0].$refs.loader.show_loader = false;
@@ -323,7 +323,7 @@
             getAddress() {
                 // GET_COUNTRIES_CITIES
                 let vm = this;
-                axios.get(apiServiesRoutes.BASE_URL + apiServiesRoutes.GET_COUNTRIES_CITIES, {
+                this.$apiServiesRoutes.API().get(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.GET_COUNTRIES_CITIES, {
                     params: {
                         lang: vm.lang
                     }

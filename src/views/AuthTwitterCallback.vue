@@ -33,7 +33,7 @@
                     oauth_token: vm.oauth_token,
                     oauth_token_secret: vm.twitter_keys.oauth_token_secret,
                 };
-                axios.post(apiServiesRoutes.BASE_URL + apiServiesRoutes.VERIFY_TWITTER, request_data)
+                this.$apiServiesRoutes.API().post(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.VERIFY_TWITTER, request_data)
                     .then((resp) => {
                         vm.$root.$children[0].$refs.loader.show_loader = false;
                         let status = resp.data.status;

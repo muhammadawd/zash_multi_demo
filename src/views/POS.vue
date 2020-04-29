@@ -482,7 +482,7 @@
                 let vm = this;
                 vm.loaders.products = true;
                 vm.products = [];
-                axios.get(vm.services.base + vm.services.urls.search_products, {
+                this.$apiServiesRoutes.API().get(vm.services.base + vm.services.urls.search_products, {
                     params: {
                         lang: vm.lang,
                         query: vm.query_search,
@@ -542,7 +542,7 @@
                 let vm = this;
                 let token = JSON.parse(localStorage.getItem('auth_pos')).token;
                 let request_data = vm.prepareData()
-                axios.post(vm.services.base + vm.services.urls.create_sale, request_data, {
+                this.$apiServiesRoutes.API().post(vm.services.base + vm.services.urls.create_sale, request_data, {
                     headers: {
                         authorization: `Bearer ${token}`
                     }

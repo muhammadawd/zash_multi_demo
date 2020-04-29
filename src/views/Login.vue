@@ -50,59 +50,60 @@
                                                 <form role="form" @submit.prevent="handleLogin">
                                                     <div class="row">
 
-                                                        <!--<div class="col-12 text-left">-->
-                                                        <!--<base-input alternative-->
-                                                        <!--class="mb-3"-->
-                                                        <!--type="email"-->
-                                                        <!--v-model="email"-->
-                                                        <!--:placeholder="this.$ml.get('email_or_phone')"-->
-                                                        <!--addon-left-icon="ni ni-user-run">-->
-                                                        <!--</base-input>-->
-                                                        <!--<small id="email"-->
-                                                        <!--class="position-relative font-weight-bold text-error"-->
-                                                        <!--style="top: -10px;"></small>-->
-                                                        <!--<div v-if="resend_mail && email"-->
-                                                        <!--class="text-left font-weight-bold p-1">-->
-                                                        <!--<a href="" @click.prevent="resendMail"-->
-                                                        <!--class="text-info">{{this.$ml.get('resend_mail')}}</a>-->
-                                                        <!--</div>-->
-                                                        <!--<div v-if="resend_code && email"-->
-                                                        <!--class="text-left font-weight-bold p-1">-->
-                                                        <!--<a href=""-->
-                                                        <!--@click.prevent="$router.push({name: 'phone_verification', params: {phone: email}})"-->
-                                                        <!--class="text-info">{{this.$ml.get('verify')}}</a>-->
-                                                        <!--</div>-->
-
-                                                        <!--</div>-->
                                                         <div class="col-12 text-left">
-                                                            <div class="form-group mb-3 input-group input-group-alternative">
-                                                                <!---->
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text">
-                                                                        <i class="ni ni-mobile-button"></i>
-                                                                    </span>
-                                                                </div>
-                                                                <input aria-describedby="addon-right addon-left"
-                                                                       v-model="phone"
-                                                                       type="text" :placeholder="this.$ml.get('phone')"
-                                                                       class="form-control"/>
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text">
-                                                                        965
-                                                                    </span>
-                                                                </div>
+                                                            <base-input alternative
+                                                                        class="mb-3"
+                                                                        type="email"
+                                                                        v-model="email"
+                                                                        :placeholder="this.$ml.get('email')"
+                                                                        addon-left-icon="ni ni-email-83">
+                                                            </base-input>
+                                                            <small id="email"
+                                                                   class="position-relative font-weight-bold text-error"
+                                                                   style="top: -10px;"></small>
+                                                            <div v-if="resend_mail && email"
+                                                                 class="text-left font-weight-bold p-1">
+                                                                <a href="" @click.prevent="resendMail"
+                                                                   class="text-info">{{this.$ml.get('resend_mail')}}</a>
                                                             </div>
-
-                                                            <div v-if="resend_code && phone"
+                                                            <div v-if="resend_code && email"
                                                                  class="text-left font-weight-bold p-1">
                                                                 <a href=""
                                                                    @click.prevent="$router.push({name: 'phone_verification', params: {phone: email}})"
                                                                    class="text-info">{{this.$ml.get('verify')}}</a>
                                                             </div>
-                                                            <small id="phone"
-                                                                   class="position-relative font-weight-bold text-error"
-                                                                   style="top: -10px;"></small>
                                                         </div>
+
+                                                        <!--<div class="col-12 text-left">-->
+                                                        <!--<div class="form-group mb-3 input-group input-group-alternative">-->
+                                                        <!--&lt;!&ndash;&ndash;&gt;-->
+                                                        <!--<div class="input-group-prepend">-->
+                                                        <!--<span class="input-group-text">-->
+                                                        <!--<i class="ni ni-mobile-button"></i>-->
+                                                        <!--</span>-->
+                                                        <!--</div>-->
+                                                        <!--<input aria-describedby="addon-right addon-left"-->
+                                                        <!--v-model="phone"-->
+                                                        <!--type="text"-->
+                                                        <!--:placeholder="this.$ml.get('phone')"-->
+                                                        <!--class="form-control"/>-->
+                                                        <!--<div class="input-group-prepend">-->
+                                                        <!--<span class="input-group-text">-->
+                                                        <!--965-->
+                                                        <!--</span>-->
+                                                        <!--</div>-->
+                                                        <!--</div>-->
+
+                                                        <!--<div v-if="resend_code && phone"-->
+                                                        <!--class="text-left font-weight-bold p-1">-->
+                                                        <!--<a href=""-->
+                                                        <!--@click.prevent="$router.push({name: 'phone_verification', params: {phone: email}})"-->
+                                                        <!--class="text-info">{{this.$ml.get('verify')}}</a>-->
+                                                        <!--</div>-->
+                                                        <!--<small id="phone"-->
+                                                        <!--class="position-relative font-weight-bold text-error"-->
+                                                        <!--style="top: -10px;"></small>-->
+                                                        <!--</div>-->
                                                         <div class="col-12 text-left">
                                                             <base-input alternative
                                                                         type="password"
@@ -158,6 +159,7 @@
             return {
                 lang: this.$ml.current,
                 phone: null,
+                email: null,
                 password: null,
                 resend_mail: false,
                 resend_code: false,
@@ -177,7 +179,7 @@
                 let vm = this;
                 vm.$root.$children[0].$refs.loader.show_loader = true;
                 let request_data = vm.prepareRequestData();
-                axios.post(apiServiesRoutes.BASE_URL + apiServiesRoutes.LOGIN, request_data)
+                this.$apiServiesRoutes.API().post(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.LOGIN, request_data)
                     .then((resp) => {
                         vm.$root.$children[0].$refs.loader.show_loader = false;
                         let status = resp.data.status;
@@ -205,7 +207,7 @@
             },
             handleGoogleLogin(request_data) {
                 let vm = this;
-                axios.post(apiServiesRoutes.BASE_URL + apiServiesRoutes.REGISTER_GOOGLE, request_data)
+                this.$apiServiesRoutes.API().post(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.REGISTER_GOOGLE, request_data)
                     .then((resp) => {
                         console.log(resp.data)
                         let status = resp.data.status;
@@ -232,7 +234,7 @@
                 let vm = this;
                 $('.text-error').text('')
                 return {
-                    phone: vm.phone,
+                    email: vm.email,
                     password: vm.password,
                     lang: vm.lang,
                 }
@@ -280,7 +282,7 @@
                 let request_data = {
                     email: this.email
                 }
-                axios.post(apiServiesRoutes.BASE_URL + apiServiesRoutes.RESEND_VERFICATION_MAIL, request_data)
+                this.$apiServiesRoutes.API().post(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.RESEND_VERFICATION_MAIL, request_data)
                     .then((resp) => {
                         let status = resp.data.status;
                         let data = resp.data.data;
@@ -296,10 +298,11 @@
             },
             twitterSign() {
                 let vm = this;
-                let url = 'https://rnpdelivery.com/auth/twitter/callback';                if (vm.$route.query.nextUrl) {
+                let url = process.env.VUE_APP_TWITTER_CALLBACK;
+                if (vm.$route.query.nextUrl) {
                     url += '?nextUrl=' + vm.$route.query.nextUrl;
                 }
-                axios.post(apiServiesRoutes.BASE_URL + apiServiesRoutes.AUTH_TWITTER, {
+                this.$apiServiesRoutes.API().post(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.AUTH_TWITTER, {
                     callback: url
                 })
                     .then((resp) => {

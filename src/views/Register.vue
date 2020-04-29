@@ -247,7 +247,7 @@
                 let request_data = vm.prepareRequestData();
                 console.log(request_data)
                 vm.$root.$children[0].$refs.loader.show_loader = true;
-                axios.post(apiServiesRoutes.BASE_URL + apiServiesRoutes.REGISTER, request_data)
+                this.$apiServiesRoutes.API().post(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.REGISTER, request_data)
                     .then((resp) => {
                         vm.$root.$children[0].$refs.loader.show_loader = false;
                         let status = resp.data.status;
@@ -266,7 +266,7 @@
             },
             handleGoogleRegister(request_data) {
                 let vm = this;
-                axios.post(apiServiesRoutes.BASE_URL + apiServiesRoutes.REGISTER_GOOGLE, request_data)
+                this.$apiServiesRoutes.API().post(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.REGISTER_GOOGLE, request_data)
                     .then((resp) => {
                         console.log(resp.data)
                         let status = resp.data.status;
@@ -337,11 +337,11 @@
             },
             twitterSign() {
                 let vm = this;
-                let url = 'https://rnpdelivery.com/auth/twitter/callback';
+                let url = process.env.VUE_APP_TWITTER_CALLBACK;
                 if (vm.$route.query.nextUrl) {
                     url += '?nextUrl=' + vm.$route.query.nextUrl;
                 }
-                axios.post(apiServiesRoutes.BASE_URL + apiServiesRoutes.AUTH_TWITTER, {
+                this.$apiServiesRoutes.API().post(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.AUTH_TWITTER, {
                     callback: url
                 })
                     .then((resp) => {

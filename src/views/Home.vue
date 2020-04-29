@@ -220,7 +220,7 @@
             getAllAds() {
                 let vm = this;
                 vm.$root.$children[0].$refs.loader.show_loader = true;
-                axios.get(apiServiesRoutes.BASE_URL + apiServiesRoutes.HOME_ADS, {
+                this.$apiServiesRoutes.API().get(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.HOME_ADS, {
                     params: {
                         lang: vm.lang
                     }
@@ -244,7 +244,7 @@
             getAllAddresses() {
                 let vm = this;
                 vm.$root.$children[0].$refs.loader.show_loader = true;
-                axios.get(apiServiesRoutes.BASE_URL + apiServiesRoutes.HOME_ADDRESSES, {
+                this.$apiServiesRoutes.API().get(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.HOME_ADDRESSES, {
                     params: {
                         lang: vm.lang
                     }
@@ -259,7 +259,7 @@
             },
             getAllCategories() {
                 let vm = this;
-                axios.get(apiServiesRoutes.BASE_URL + apiServiesRoutes.HOME_CATEGORIES, {
+                this.$apiServiesRoutes.API().get(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.HOME_CATEGORIES, {
                     params: {
                         lang: vm.lang,
                         main: 1

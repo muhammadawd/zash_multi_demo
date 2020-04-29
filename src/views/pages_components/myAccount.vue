@@ -107,7 +107,7 @@
                     gender: vm.gender,
                     birth_date: vm.birth_date,
                 })
-                axios.post(apiServiesRoutes.BASE_URL + apiServiesRoutes.UPDATE_INFO,
+                this.$apiServiesRoutes.API().post(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.UPDATE_INFO,
                     {
                         first_name: vm.first_name,
                         last_name: vm.last_name,

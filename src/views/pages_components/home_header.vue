@@ -86,7 +86,7 @@
             getAllSliders() {
                 let vm = this;
                 vm.$root.$children[0].$refs.loader.show_loader = true;
-                axios.get(apiServiesRoutes.BASE_URL + apiServiesRoutes.SITE_SLIDER, {
+                this.$apiServiesRoutes.API().get(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.SITE_SLIDER, {
                     params: {
                         lang: vm.lang
                     }

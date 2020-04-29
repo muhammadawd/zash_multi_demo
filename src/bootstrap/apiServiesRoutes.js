@@ -1,12 +1,10 @@
-module.exports = {
-    // BASE_URL: 'http://192.168.1.100/filter/api',
-    // BASE_URL: 'http://mfpq8.com/back-end/api',
-    // BASE_URL: 'http://192.168.1.38/zash/api',
-    // BASE_URL: 'http://q87w.com/q87w.com/root/back-end/api',
-    // BASE_URL: 'http://approc.com/~approctest/zash/back_end/api',
-    // BASE_URL: 'https://zash.com.kw/back_end/api',
-    BASE_URL: 'https://rnpdelivery.com/back_end/api',
-    // BASE_URL: 'https://zashzash.com/back_end/api',
+import axios from 'axios';
+import {helper} from "@/bootstrap/helper";
+
+let BASE_URL_ORIGIN = process.env.VUE_APP_API_SERVICE;
+
+export const apiServiesRoutes = {
+    BASE_URL: BASE_URL_ORIGIN,
 
     AUTH_TWITTER: '/user/get-twitter-token',
     VERIFY_TWITTER: '/user/twitterLogin',
@@ -60,4 +58,26 @@ module.exports = {
     CREATE_VENDOR: '/vendor-register/create',
     CREATE_CONTACT_US: '/contact-us/create',
     CREATE_SUBSCRIBE: '/subscribe/create',
+
+    API: () => {
+        let token = null;
+        try {
+            let auth_data = localStorage.getItem('auth_data');
+            auth_data = JSON.parse(auth_data);
+            token = auth_data.token;
+        } catch (e) {
+            token = null
+        }
+
+        return axios.create({
+            baseURL: BASE_URL_ORIGIN,
+            withCredentials: false,
+            headers: {
+                'Authorization': token ? `Bearer ${token}` : '',
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        })
+    },
 };

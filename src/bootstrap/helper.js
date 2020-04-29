@@ -14,6 +14,9 @@ export const helper = {
         }
         return defaultlogo;
     },
+    getExpiration() {
+        return JSON.parse(localStorage.getItem('expiration'))
+    },
     generateJWTToken: () => {
         let credential = {
             apiKey: '',

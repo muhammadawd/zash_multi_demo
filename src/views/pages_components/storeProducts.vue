@@ -128,7 +128,7 @@
                     vm.page = 1;
                     vm.branches = [];
                 }
-                await axios.get(apiServiesRoutes.BASE_URL + apiServiesRoutes.FIND_STORES, {
+                await this.$apiServiesRoutes.API().get(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.FIND_STORES, {
                     params: {
                         lang: vm.lang,
                         category_ids: vm.category_ids,

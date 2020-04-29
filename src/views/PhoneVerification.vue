@@ -150,7 +150,7 @@
                 let vm = this;
                 vm.$root.$children[0].$refs.loader.show_loader = true;
                 let request_data = vm.prepareRequestData();
-                axios.post(apiServiesRoutes.BASE_URL + apiServiesRoutes.VERFICATION_PHONE, request_data)
+                this.$apiServiesRoutes.API().post(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.VERFICATION_PHONE, request_data)
                     .then((resp) => {
                         vm.$root.$children[0].$refs.loader.show_loader = false;
                         let status = resp.data.status;
@@ -194,7 +194,7 @@
                 let request_data = {
                     phone: this.phone
                 };
-                axios.post(apiServiesRoutes.BASE_URL + apiServiesRoutes.RESEND_VERFICATION_PHONE, request_data)
+                this.$apiServiesRoutes.API().post(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.RESEND_VERFICATION_PHONE, request_data)
                     .then((resp) => {
                         let status = resp.data.status;
                         let data = resp.data.data;

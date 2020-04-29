@@ -159,7 +159,7 @@
         methods: {
             showInvoice(id) {
                 let vm = this;
-                axios.get(apiServiesRoutes.BASE_URL + apiServiesRoutes.GET_USER_SALES + `/${id}`,
+                this.$apiServiesRoutes.API().get(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.GET_USER_SALES + `/${id}`,
                     {
                         headers: {
                             Authorization: "Bearer " + vm.token

@@ -279,7 +279,7 @@
                 lang: this.$ml.current,
                 page: 1,
                 query: this.$route.query.q,
-                auto_complete: apiServiesRoutes.BASE_URL + apiServiesRoutes.PRODUCT_AUTO_COMPLETE + '?query=',
+                auto_complete: this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.PRODUCT_AUTO_COMPLETE + '?query=',
                 products: [],
                 address_options: [],
                 address: {
@@ -428,7 +428,7 @@
                 vm.no_data = false;
                 let cats = JSON.parse(JSON.stringify(vm.checked_categories));
                 // vm.$root.$children[0].$refs.loader.show_loader = true;
-                axios.get(apiServiesRoutes.BASE_URL + apiServiesRoutes.SITE_SEARCH, {
+                this.$apiServiesRoutes.API().get(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.SITE_SEARCH, {
                     params: {
                         lang: vm.lang,
                         category_ids: cats,
@@ -473,7 +473,7 @@
             },
             getApiSuggest() {
                 let vm = this;
-                axios.get(apiServiesRoutes.BASE_URL + apiServiesRoutes.PRODUCT_AUTO_COMPLETE, {
+                this.$apiServiesRoutes.API().get(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.PRODUCT_AUTO_COMPLETE, {
                     params: {
                         category: true,
                         lang: vm.lang,
@@ -489,7 +489,7 @@
             },
             getAllAddresses() {
                 let vm = this;
-                axios.get(apiServiesRoutes.BASE_URL + apiServiesRoutes.HOME_ADDRESSES, {
+                this.$apiServiesRoutes.API().get(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.HOME_ADDRESSES, {
                     params: {
                         lang: vm.lang
                     }
@@ -503,7 +503,7 @@
             },
             getAllCategories() {
                 let vm = this;
-                axios.get(apiServiesRoutes.BASE_URL + apiServiesRoutes.HOME_CATEGORIES, {
+                this.$apiServiesRoutes.API().get(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.HOME_CATEGORIES, {
                     params: {
                         lang: vm.lang,
                         // main: 1
@@ -518,7 +518,7 @@
             },
             getAllBranches() {
                 let vm = this;
-                axios.get(apiServiesRoutes.BASE_URL + apiServiesRoutes.HOME_BRANCHES, {
+                this.$apiServiesRoutes.API().get(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.HOME_BRANCHES, {
                     params: {
                         lang: vm.lang
                     }

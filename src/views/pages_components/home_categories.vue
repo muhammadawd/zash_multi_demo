@@ -98,7 +98,7 @@
             getAllCategory() {
                 let vm = this;
                 vm.$root.$children[0].$refs.loader.show_loader = true;
-                axios.get(apiServiesRoutes.BASE_URL + apiServiesRoutes.FIND_CATEGORIES, {
+                this.$apiServiesRoutes.API().get(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.FIND_CATEGORIES, {
                     params: {
                         lang: vm.lang
                     }

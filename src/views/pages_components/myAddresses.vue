@@ -312,7 +312,7 @@
                 if (!vm.auth) {
                     //    unauthorized
                 }
-                axios.post(apiServiesRoutes.BASE_URL + apiServiesRoutes.CREATE_CLIENT_ADDRESS, {
+                this.$apiServiesRoutes.API().post(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.CREATE_CLIENT_ADDRESS, {
                     lang: vm.lang,
                     address_ids: [vm.address_id],
                     user_id: vm.auth.user.id,
@@ -374,7 +374,7 @@
                 let vm = this;
                 // DELETE_CLIENT_ADDRESS
                 console.log(key)
-                axios.delete(apiServiesRoutes.BASE_URL + apiServiesRoutes.DELETE_CLIENT_ADDRESS + `/${element.id}`).then((resp) => {
+                this.$apiServiesRoutes.API().delete(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.DELETE_CLIENT_ADDRESS + `/${element.id}`).then((resp) => {
                     let status = resp.data.status;
                     let data = resp.data.data;
                     if (status) {
@@ -404,7 +404,7 @@
             getAddress() {
                 // GET_COUNTRIES_CITIES
                 let vm = this;
-                axios.get(apiServiesRoutes.BASE_URL + apiServiesRoutes.GET_COUNTRIES_CITIES, {
+                this.$apiServiesRoutes.API().get(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.GET_COUNTRIES_CITIES, {
                     params: {
                         lang: vm.lang
                     }
@@ -421,7 +421,7 @@
             getSavedAddress(id) {
                 // GET_CLIENT_ADDRESS
                 let vm = this;
-                axios.get(apiServiesRoutes.BASE_URL + apiServiesRoutes.GET_CLIENT_ADDRESS + `/${id}`, {
+                this.$apiServiesRoutes.API().get(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.GET_CLIENT_ADDRESS + `/${id}`, {
                     params: {
                         lang: vm.lang
                     }

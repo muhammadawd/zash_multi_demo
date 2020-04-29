@@ -467,7 +467,7 @@
                 // CREATE_STORE_RATINGS
                 let vm = this;
                 vm.$root.$children[0].$refs.loader.show_loader = true;
-                axios.post(apiServiesRoutes.BASE_URL + apiServiesRoutes.CREATE_STORE_RATINGS, {
+                this.$apiServiesRoutes.API().post(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.CREATE_STORE_RATINGS, {
                     rate: vm.rating,
                     user_id: vm.auth.user.id,
                     comment: vm.rate_comment,
@@ -523,7 +523,7 @@
             getStoreProducts(id) {
                 let vm = this;
                 vm.$root.$children[0].$refs.loader.show_loader = true;
-                axios.get(apiServiesRoutes.BASE_URL + apiServiesRoutes.FIND_STORE_PRODUCTS + `/${id}`, {
+                this.$apiServiesRoutes.API().get(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.FIND_STORE_PRODUCTS + `/${id}`, {
                     params: {
                         query: vm.query,
                         lang: vm.lang
@@ -549,7 +549,7 @@
             },
             getStoreInfo(id) {
                 let vm = this;
-                axios.get(apiServiesRoutes.BASE_URL + apiServiesRoutes.FIND_STORE_INFO + `/${id}`, {
+                this.$apiServiesRoutes.API().get(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.FIND_STORE_INFO + `/${id}`, {
                     params: {
                         lang: vm.lang
                     }
@@ -566,7 +566,7 @@
             getStoreRating($state) {
                 let vm = this;
                 let id = this.$route.params.id;
-                axios.get(apiServiesRoutes.BASE_URL + apiServiesRoutes.FIND_STORE_RATINGS + `/${id}`, {
+                this.$apiServiesRoutes.API().get(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.FIND_STORE_RATINGS + `/${id}`, {
                     params: {
                         lang: vm.lang,
                         page: vm.branch_rate_page

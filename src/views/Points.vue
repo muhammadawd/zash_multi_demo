@@ -108,7 +108,7 @@
         methods: {
             transform() {
                 let vm = this;
-                axios.post(apiServiesRoutes.BASE_URL + apiServiesRoutes.CREATE_VOUCHERS, {
+                this.$apiServiesRoutes.API().post(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.CREATE_VOUCHERS, {
                     points: vm.points
                 }, {
                     headers: {Authorization: "Bearer " + vm.token}
@@ -121,7 +121,7 @@
             },
             getVouchers() {
                 let vm = this;
-                axios.get(apiServiesRoutes.BASE_URL + apiServiesRoutes.MY_VOUCHERS, {
+                this.$apiServiesRoutes.API().get(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.MY_VOUCHERS, {
                     params: {},
                     headers: {Authorization: "Bearer " + vm.token}
                 }).then((resp) => {

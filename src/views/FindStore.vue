@@ -142,7 +142,7 @@
                 if (categories.length === 0) {
                     categories = vm.init_category_ids;
                 }
-                axios.get(apiServiesRoutes.BASE_URL + apiServiesRoutes.FIND_CATEGORIES, {
+                this.$apiServiesRoutes.API().get(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.FIND_CATEGORIES, {
                     params: {
                         lang: vm.lang,
                         category_ids: categories,

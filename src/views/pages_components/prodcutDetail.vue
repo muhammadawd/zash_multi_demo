@@ -741,7 +741,7 @@
                 let vm = this;
                 vm.$root.$children[0].$refs.loader.show_loader = true;
                 // FIND_PRODUCT
-                axios.get(apiServiesRoutes.BASE_URL + apiServiesRoutes.FIND_PRODUCT + `/${id}/${branch_id}`, {
+                this.$apiServiesRoutes.API().get(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.FIND_PRODUCT + `/${id}/${branch_id}`, {
                     params: {
                         lang: vm.lang,
                     }

@@ -11,7 +11,12 @@ import VueProgressiveImage from 'vue-progressive-image'
 import VueLazyload from 'vue-lazyload'
 
 import {helper} from "@/bootstrap/helper";
-Vue.prototype.$helper = helper
+
+Vue.prototype.$helper = helper;
+
+import {apiServiesRoutes} from "@/bootstrap/apiServiesRoutes";
+
+Vue.prototype.$apiServiesRoutes = apiServiesRoutes;
 
 import './bootstrap/ml'
 import './bootstrap/bootstrap'

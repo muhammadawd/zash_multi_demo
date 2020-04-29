@@ -108,7 +108,7 @@
             getAllProductsWithCategory() {
                 let vm = this;
                 vm.$root.$children[0].$refs.loader.show_loader = true;
-                axios.get(apiServiesRoutes.BASE_URL + apiServiesRoutes.FIND_STORE_PRODUCTS + '/1', {
+                this.$apiServiesRoutes.API().get(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.FIND_STORE_PRODUCTS + '/1', {
                     params: {
                         lang: vm.lang
                     }
@@ -129,7 +129,7 @@
             getAllProducts() {
                 let vm = this;
                 vm.$root.$children[0].$refs.loader.show_loader = true;
-                axios.get(apiServiesRoutes.BASE_URL + apiServiesRoutes.SITE_PRODUCTS, {
+                this.$apiServiesRoutes.API().get(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.SITE_PRODUCTS, {
                     params: {
                         lang: vm.lang
                     }

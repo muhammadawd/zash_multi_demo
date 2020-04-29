@@ -80,7 +80,7 @@
                 }).then((result) => {
                     if (result.value) {
                         let couponModel = vm.couponModel;
-                        axios.get(apiServiesRoutes.BASE_URL + apiServiesRoutes.CHECK_COUPON + `?coupon_code=${couponModel}&user_id=${vm.user_id}`, {
+                        this.$apiServiesRoutes.API().get(this.$apiServiesRoutes.BASE_URL + this.$apiServiesRoutes.CHECK_COUPON + `?coupon_code=${couponModel}&user_id=${vm.user_id}`, {
                             headers: {Authorization: "Bearer " + vm.auth.token}
                         }).then((response) => {
                             let status = response.data.status;

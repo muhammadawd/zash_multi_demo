@@ -11,11 +11,10 @@
                     <img :src="$helper.getLogo()" width="170" height="40"/>
                 </router-link>
 
-                <div slot="content-alert">
-                    <div v-if="getExpiration()"
-                         style="height: 25px;background: #F44336;position: absolute;top: 0;width: 100%;left: 0;color: #fff;text-align: center;">
-                        {{getExpiration()}}
-                    </div>
+                <div v-if="getExpiration()"
+                     style="height: 25px;background: #F44336;position: absolute;top: 0;width: 100%;left: 0;color: #fff;text-align: center;"
+                     slot="content-alert">
+                    <div> {{getExpiration()}}</div>
                 </div>
                 <div style="position: absolute;right: 60px;top: 0;" slot="content-cart">
                     <div class="d-md-none" style="margin-top: 20px;">

@@ -191,7 +191,7 @@
                             return;
                         }
                         localStorage.setItem('auth', JSON.stringify(data));
-                        // vm.$store.dispatch('addAuthUser', data);
+                        vm.$store.dispatch('addAuthUser', data);
                         console.log(data)
                         if (vm.$route.query.nextUrl) {
                             vm.$router.push({name: vm.$route.query.nextUrl});
@@ -219,7 +219,7 @@
                             return;
                         }
                         localStorage.setItem('auth', JSON.stringify(data));
-                        // vm.$store.dispatch('addAuthUser', data);
+                        vm.$store.dispatch('addAuthUser', data);
                         if (vm.$route.query.nextUrl) {
                             vm.$router.push({name: vm.$route.query.nextUrl});
                             location.reload();

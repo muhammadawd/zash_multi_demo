@@ -31,53 +31,83 @@
                                 <!--</a>-->
 
                                 <router-link :to="{name:'home'}" class="nav-link get-toggle-button">
-                                    <span class="nav-link-inner--text font-weight-bold text-capitalize">{{this.$ml.get('home')}}</span>
+                                    <span class="nav-link-inner--text font-weight-bold text-capitalize direction-inverse">
+                                        {{this.$ml.get('home')}}
+                                        <i class="fa fa-home"></i>
+                                    </span>
                                 </router-link>
                             </li>
                             <li class="nav-item p-1">
                                 <router-link :to="{name:'search_result'}" class="nav-link get-toggle-button">
-                                    <span class="nav-link-inner--text font-weight-bold text-capitalize">{{this.$ml.get('search')}}</span>
+                                    <span class="nav-link-inner--text font-weight-bold text-capitalize">
+                                        {{this.$ml.get('search')}}
+                                        <i class="fa fa-search"></i>
+                                    </span>
                                 </router-link>
                             </li>
                             <li class="nav-item p-1">
                                 <router-link :to="{name:'about_us'}" class="nav-link get-toggle-button">
-                                    <span class="nav-link-inner--text font-weight-bold text-capitalize">{{this.$ml.get('about_us')}}</span>
+                                    <span class="nav-link-inner--text font-weight-bold text-capitalize">
+                                        {{this.$ml.get('about_us')}}
+                                        <i class="fa fa-archive"></i>
+                                    </span>
                                 </router-link>
                             </li>
                             <li class="nav-item p-1">
                                 <router-link :to="{name:'register_vendor'}" class="nav-link get-toggle-button">
-                                    <span class="nav-link-inner--text font-weight-bold text-capitalize">{{this.$ml.get('contact_us')}}</span>
+                                    <span class="nav-link-inner--text font-weight-bold text-capitalize">
+                                        {{this.$ml.get('contact_us')}}
+                                        <i class="fa fa-phone"></i>
+                                    </span>
                                 </router-link>
                             </li>
                             <li class="nav-item p-1">
                                 <router-link :to="{name:'location'}" class="nav-link get-toggle-button">
-                                    <span class="nav-link-inner--text font-weight-bold text-capitalize">{{this.$ml.get('location')}}</span>
+                                    <span class="nav-link-inner--text font-weight-bold text-capitalize">
+                                        {{this.$ml.get('location')}}
+                                        <i class="fa fa-map"></i>
+                                    </span>
                                 </router-link>
                             </li>
                             <li class="nav-item p-1" v-if="auth">
                                 <router-link :to="{name:'account'}" class="nav-link get-toggle-button">
-                                    <span class="nav-link-inner--text font-weight-bold text-capitalize">{{this.$ml.get('my_account')}}</span>
+                                    <span class="nav-link-inner--text font-weight-bold text-capitalize">
+                                        {{this.$ml.get('my_account')}}
+                                        <i class="fa fa-user"></i>
+                                    </span>
                                 </router-link>
                             </li>
                             <li class="nav-item p-1" v-if="auth && checkPointModule()">
                                 <router-link :to="{name:'my_points'}" class="nav-link get-toggle-button">
-                                    <span class="nav-link-inner--text font-weight-bold text-capitalize">{{this.$ml.get('my_points')}}</span>
+                                    <span class="nav-link-inner--text font-weight-bold text-capitalize">
+                                        {{this.$ml.get('my_points')}}
+                                        <i class="fa fa-gift"></i>
+                                    </span>
                                 </router-link>
                             </li>
                             <li class="nav-item p-1 get-toggle-button" v-if="auth">
                                 <a href="" @click.prevent="Logout" class="nav-link">
-                                    <span class="nav-link-inner--text font-weight-bold text-capitalize">{{this.$ml.get('logout')}}</span>
+                                    <span class="nav-link-inner--text font-weight-bold text-capitalize">
+                                        {{this.$ml.get('logout')}}
+                                        <i class="fa fa-sign-out"></i>
+                                    </span>
                                 </a>
                             </li>
                             <li class="nav-item p-1" v-if="!auth">
                                 <router-link :to="{name:'login'}" class="nav-link nav-link-icon get-toggle-button">
-                                    <span class="nav-link-inner--text font-weight-bold text-capitalize">{{this.$ml.get('login')}}</span>
+                                    <span class="nav-link-inner--text font-weight-bold text-capitalize">
+                                        {{this.$ml.get('login')}}
+                                        <i class="fa fa-sign-in"></i>
+                                    </span>
                                 </router-link>
                             </li>
                             <li class="nav-item p-1" v-if="!auth">
                                 <router-link :to="{name:'register'}"
                                              class="nav-link nav-link-icon get-toggle-button">
-                                    <span class="nav-link-inner--text font-weight-bold text-capitalize">{{this.$ml.get('register')}}</span>
+                                    <span class="nav-link-inner--text font-weight-bold text-capitalize">
+                                        {{this.$ml.get('register')}}
+                                        <i class="fa fa-address-card"></i>
+                                    </span>
                                 </router-link>
                             </li>
                         </ul>
@@ -94,13 +124,14 @@
                          @click="$router.push({name:'search_result',query:{q:(cat.translated.title ? cat.translated.title.toLowerCase() : '')}})">
                         <div class="text-left p-1 pb-0 pt-0">
                             <h3 class="font-weight-bold pt-2"
-                                style="font-size: 12px;white-space: nowrap;text-overflow: ellipsis">
+                                style="font-size: 14px;white-space: nowrap;text-overflow: ellipsis">
                                 {{cat.translated.title}}
                             </h3>
                         </div>
                     </div>
                 </div>
             </Slide>
+
             <navbar-toggle-button v-if="!isMobile()" :toggled="toggled"
                                   :target="contentId"
                                   @click.native.stop="toggled = !toggled">
@@ -268,5 +299,9 @@
 
     .bm-menu {
         background-color: #fff !important;
+    }
+
+    .bm-item-list {
+        font-size: 15px !important;
     }
 </style>

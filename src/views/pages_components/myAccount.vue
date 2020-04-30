@@ -135,7 +135,7 @@
                     console.log(data.user)
 
                     localStorage.setItem('auth', JSON.stringify(auth));
-                    // vm.$store.dispatch('addAuthUser', auth);
+                    vm.$store.dispatch('addAuthUser', auth);
                 }).catch((err) => {
 
                 })

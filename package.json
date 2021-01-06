@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@syncfusion/ej2-vue-dropdowns": "^18.1.44",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap-vue": "^2.0.0-rc.11",
     "flatpickr": "^4.5.1",
     "idb": "^3.0.2",
